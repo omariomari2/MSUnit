@@ -2,8 +2,7 @@ services:
   - type: web
     name: msunit-web
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python manage.py migrate && gunicorn stroke_system.wsgi:application
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
     envVars:
       - key: DEBUG
         value: False
