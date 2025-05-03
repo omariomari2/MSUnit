@@ -1,4 +1,35 @@
-# MSUnit: Stroke Patient Management System
+# MSUnit
+
+## Deployment on Render
+
+### Prerequisites
+- Python 3.8+
+- Pip
+
+### Deployment Steps
+
+1. **Build Command**:
+```
+pip install -r requirements.txt
+python manage.py collectstatic --noinput
+```
+
+2. **Start Command**:
+```
+gunicorn stroke_system.wsgi:application
+```
+
+#### Environment Variables
+Ensure you set the following environment variables in Render:
+- `SECRET_KEY`: Your Django secret key
+- `DEBUG`: Set to `False` for production
+- Database connection details (if using external database)
+
+#### Additional Configuration
+- Ensure `ALLOWED_HOSTS` includes your Render app's domain
+- Configure static and media file hosting as needed
+
+## Overview
 
 A Django-based web application for mobile stroke units and remote neurologist consultations.
 
