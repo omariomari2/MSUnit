@@ -2,7 +2,6 @@
 
 A Django-based web application for mobile stroke units and remote neurologist consultations.
 
-![Project Logo](logo.png)
 
 ## 🏥 Project Overview
 
